@@ -1,5 +1,6 @@
 import React from "react";
 import {RootWrapper} from "../../components/RootLayout.jsx";
+import {Testimonial} from "./Testimonial.jsx";
 
 const Polygon = () => (
     <svg
@@ -71,6 +72,7 @@ export const Home = () => {
                 </div>
                 <ImageBlock/>
             </div>
+            <Testimonial/>
         </RootWrapper>
     );
 };

@@ -12,7 +12,7 @@ import {Footer} from "./Footer.jsx";
  */
 export const Layout = ({children}) => {
     return (
-        <div className="relative flex w-full flex-col">
+        <div className="relative flex w-full h-full flex-col">
             <Header/>
             <main className="flex-auto">{children}</main>
             <Footer/>

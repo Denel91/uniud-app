@@ -84,7 +84,7 @@ export const Home = () => {
                             </div>
                         </div>
                         <div className="mt-16 sm:mt-16 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
-                            <Image alt="" width={720} src="src/assets/pulmonologist.svg"/>
+                            <Image alt="" width={720} src="/src/assets/pulmonologist.svg"/>
                         </div>
                     </div>
             </div>

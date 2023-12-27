@@ -1,11 +1,11 @@
 import React from "react";
 import {createBrowserRouter} from "react-router-dom";
-import {ErrorPage} from "./components/Error-page.jsx";
+import {ErrorPage} from "./app/home/Error-page.jsx";
 import {Groups} from "./app/groups/Groups.jsx";
 import {Diagnosis} from "./app/diagnosis/Diagnosis.jsx";
-import {About} from "./app/about/About.jsx";
 import {LogIn} from "./app/login/Login.jsx";
 import {Home} from "./app/home/Root.jsx";
+import {AboutUs} from "./app/about/AboutUs.jsx";
 
 /**
  * Creates a browser router with the given routes.
@@ -22,7 +22,7 @@ export const router = createBrowserRouter(
         },
         {
             path: "/about",
-            element: <About/>,
+            element: <AboutUs/>,
         },
         {
             path: "/groups",

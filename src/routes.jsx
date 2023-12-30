@@ -1,6 +1,6 @@
 import React from "react";
 import {createBrowserRouter} from "react-router-dom";
-import {ErrorPage} from "./app/home/Error-page.jsx";
+import {ErrorPage} from "./app/PageNotFound/Error-page.jsx";
 import {Groups} from "./app/groups/Groups.jsx";
 import {Diagnosis} from "./app/diagnosis/Diagnosis.jsx";
 import {LogIn} from "./app/login/Login.jsx";

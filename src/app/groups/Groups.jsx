@@ -8,13 +8,12 @@ const posts = [
         href: '#',
         description:
             'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-        imageUrl: '/AdobeStock_628159488.jpeg',
+        imageUrl: 'https://github.com/Denel91/uniud-app/blob/master/public/AdobeStock_628159488.jpeg?raw=true',
         date: 'Mar 16, 2020',
         datetime: '2020-03-16',
         author: {
             name: 'Michael Foster',
-            imageUrl:
-                'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            imageUrl: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
         },
     },
     {
@@ -23,13 +22,12 @@ const posts = [
         href: '#',
         description:
             'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-        imageUrl: '/AdobeStock_568113469.jpeg',
+        imageUrl: 'https://github.com/Denel91/uniud-app/blob/master/public/AdobeStock_568113469.jpeg?raw=true',
         date: 'Mar 16, 2020',
         datetime: '2020-03-16',
         author: {
             name: 'Michael Foster',
-            imageUrl:
-                'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            imageUrl: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
         },
     },
     {
@@ -38,8 +36,7 @@ const posts = [
         href: '#',
         description:
             'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-        imageUrl:
-            '/AdobeStock_596157071.jpeg',
+        imageUrl: 'https://github.com/Denel91/uniud-app/blob/master/public/AdobeStock_596157071.jpeg?raw=true',
         date: 'Mar 16, 2020',
         datetime: '2020-03-16',
         author: {
@@ -57,8 +54,7 @@ const postsUnder = [
         href: '#',
         description:
             'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-        imageUrl:
-            '/AdobeStock_607285922.jpeg',
+        imageUrl: 'https://github.com/Denel91/uniud-app/blob/master/public/AdobeStock_607285922.jpeg?raw=true',
         date: 'Mar 16, 2020',
         datetime: '2020-03-16',
         author: {
@@ -73,13 +69,12 @@ const postsUnder = [
         href: '#',
         description:
             'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-        imageUrl: '/AdobeStock_575211552.jpeg',
+        imageUrl: 'https://github.com/Denel91/uniud-app/blob/master/public/AdobeStock_575211552.jpeg?raw=true',
         date: 'Mar 16, 2020',
         datetime: '2020-03-16',
         author: {
             name: 'Michael Foster',
-            imageUrl:
-                'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            imageUrl: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
         },
     },
 ]

@@ -5,7 +5,7 @@ const logoSrc = "https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=60
 const Header = ({logoSrc, title}) => {
     return (
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            <img className="mx-auto h-10 w-auto" src={logoSrc} alt="Your Company" />
+            <img className="mx-auto h-10 w-auto" src={logoSrc} alt="Your Company"/>
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
                 {title}
             </h2>
@@ -68,24 +68,21 @@ const SubmitButton = ({type, text}) => {
             </button>
         </div>
     );
-}
+};
 
 export const LogIn = () => {
     return (
-        <>
-            <Layout>
-                <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 mt-12">
-                    <Header logoSrc={logoSrc} title="Sign in to your account"/>
-
-                    <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                        <form className="space-y-6" action="#" method="POST" data-netlify="true">
-                            <InputFieldEmail id="email" type="email" autoComplete="email" label="Email address"/>
-                            <InputFieldPassword id="password" type="password" autoComplete="current-password" label="Password"/>
-                            <SubmitButton type="button" text="Sign in"/>
-                        </form>
-                    </div>
+        <Layout>
+            <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 mt-12">
+                <Header logoSrc={logoSrc} title="Sign in to your account"/>
+                <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                    <form className="space-y-6" action="#" method="POST" data-netlify="true">
+                        <InputFieldEmail id="email" type="email" autoComplete="email" label="Email address"/>
+                        <InputFieldPassword id="password" type="password" autoComplete="current-password" label="Password"/>
+                        <SubmitButton type="button" text="Sign in"/>
+                    </form>
                 </div>
-            </Layout>
-        </>
+            </div>
+        </Layout>
     );
 };

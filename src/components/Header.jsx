@@ -49,9 +49,9 @@ export const Header = () => {
                     {renderNavigationItems("text-sm font-semibold leading-6 text-gray-900")}
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a href="/login" className="text-sm font-semibold leading-6 text-gray-900">
+                    <Link to="/contact" className="text-sm font-semibold leading-6 text-gray-900">
                         Log in <span aria-hidden="true">&rarr;</span>
-                    </a>
+                    </Link>
                 </div>
             </nav>
             <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -74,9 +74,9 @@ export const Header = () => {
                                 {renderNavigationItems("-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50")}
                             </div>
                             <div className="py-6">
-                                <a href="/contact" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                                <Link to="/login" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                                     Log in
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

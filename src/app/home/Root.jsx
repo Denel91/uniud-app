@@ -53,7 +53,7 @@ const Scenario = () => (
                 <p className="mt-3 text-xl text-white">
                     Example
                 </p>
-                <a href="#" className="mt-8 block w-full rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto">
+                <a href="#" className="mt-8 block w-full rounded-md border border-transparent bg-[#99cccc] px-8 py-3 text-base font-medium text-gray-900 hover:bg-[#77bbbb] sm:w-auto">
                     Read our story
                 </a>
             </div>
@@ -74,7 +74,7 @@ export const Home = () => {
                                 Take <span className="text-indigo-600">control</span> of your health
                             </Headline>
                             <Paragraph className="mt-6 text-lg leading-8 text-gray-600">
-                                Esse id magna consectetur fugiat non dolor in ad laboris magna laborum ea consequat.
+                                Pulmonary hypertension is a rare condition that can affect people of all ages, but it is more common in people who have another heart or lung condition.
                             </Paragraph>
                             <div className="mt-10 flex items-center gap-x-6">
                                 <LinkBlock href="" className="text-sm font-semibold leading-6 text-gray-900">

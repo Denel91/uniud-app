@@ -1,11 +1,12 @@
 import React from "react";
 import {Layout} from "../../components/Layout.jsx";
+import {Link} from "react-router-dom";
 
 const posts = [
     {
         id: 1,
         title: 'GROUP I - Pulmonary arterial hypertension',
-        href: '#',
+        href: 'one',
         description:
             'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
         imageUrl: 'https://github.com/Denel91/uniud-app/blob/master/public/AdobeStock_628159488.jpeg?raw=true',
@@ -19,7 +20,7 @@ const posts = [
     {
         id: 2,
         title: 'GROUP II - Pulmonary hypertension associated with left heart disease',
-        href: '#',
+        href: 'two',
         description:
             'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
         imageUrl: 'https://github.com/Denel91/uniud-app/blob/master/public/AdobeStock_568113469.jpeg?raw=true',
@@ -33,7 +34,7 @@ const posts = [
     {
         id: 3,
         title: 'GROUP III - Pulmonary hypertension associated with lung diseases and/or hypoxia',
-        href: '#',
+        href: 'three',
         description:
             'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
         imageUrl: 'https://github.com/Denel91/uniud-app/blob/master/public/AdobeStock_596157071.jpeg?raw=true',
@@ -41,17 +42,16 @@ const posts = [
         datetime: '2020-03-16',
         author: {
             name: 'Michael Foster',
-            imageUrl:
-                'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            imageUrl: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
         },
     },
 ]
 
 const postsUnder = [
     {
-        id: 1,
+        id: 4,
         title: 'GROUP IV - Pulmonary hypertension associated with pulmonary artery obstructions',
-        href: '#',
+        href: 'four',
         description:
             'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
         imageUrl: 'https://github.com/Denel91/uniud-app/blob/master/public/AdobeStock_607285922.jpeg?raw=true',
@@ -59,14 +59,13 @@ const postsUnder = [
         datetime: '2020-03-16',
         author: {
             name: 'Michael Foster',
-            imageUrl:
-                'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            imageUrl: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
         },
     },
     {
-        id: 2,
+        id: 5,
         title: 'GROUP V - Pulmonary hypertension with unclear and/or multifactorial mechanisms',
-        href: '#',
+        href: 'five',
         description:
             'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
         imageUrl: 'https://github.com/Denel91/uniud-app/blob/master/public/AdobeStock_575211552.jpeg?raw=true',
@@ -97,27 +96,11 @@ export const Groups = () => {
                                 <img src={post.imageUrl} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover"/>
                                 <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"/>
                                 <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"/>
-
-                                <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-                                    <time dateTime={post.datetime} className="mr-8">
-                                        {post.date}
-                                    </time>
-                                    <div className="-ml-4 flex items-center gap-x-4">
-                                        <svg viewBox="0 0 2 2" className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
-                                            <circle cx={1} cy={1} r={1}/>
-                                        </svg>
-                                        <div className="flex gap-x-2.5">
-                                            <img src={post.author.imageUrl} alt=""
-                                                 className="h-6 w-6 flex-none rounded-full bg-white/10"/>
-                                            {post.author.name}
-                                        </div>
-                                    </div>
-                                </div>
                                 <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
-                                    <a href={post.href}>
+                                    <Link to={`${post.href}`}>
                                         <span className="absolute inset-0"/>
                                         {post.title}
-                                    </a>
+                                    </Link>
                                 </h3>
                             </article>
                         ))}
@@ -129,28 +112,11 @@ export const Groups = () => {
                                 <img src={post.imageUrl} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover"/>
                                 <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"/>
                                 <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"/>
-
-                                <div
-                                    className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-                                    <time dateTime={post.datetime} className="mr-8">
-                                        {post.date}
-                                    </time>
-                                    <div className="-ml-4 flex items-center gap-x-4">
-                                        <svg viewBox="0 0 2 2" className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
-                                            <circle cx={1} cy={1} r={1}/>
-                                        </svg>
-                                        <div className="flex gap-x-2.5">
-                                            <img src={post.author.imageUrl} alt=""
-                                                 className="h-6 w-6 flex-none rounded-full bg-white/10"/>
-                                            {post.author.name}
-                                        </div>
-                                    </div>
-                                </div>
                                 <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
-                                    <a href={post.href}>
+                                    <Link to={`${post.href}`}>
                                         <span className="absolute inset-0"/>
                                         {post.title}
-                                    </a>
+                                    </Link>
                                 </h3>
                             </article>
                         ))}

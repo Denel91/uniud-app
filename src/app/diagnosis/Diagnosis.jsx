@@ -11,10 +11,11 @@ export const Diagnosis = () => {
             <div className="bg-stone-50">
                 <div className="py-24 lg:py-32">
                     <div className="relative z-10 mx-auto max-w-7xl pl-4 pr-8 sm:px-6 lg:px-8">
-                        <h1 className="text-2xl font-bold tracking-tight text-stone-900 sm:text-5xl lg:text-5xl">Pulmonary <span
-                            className="text-indigo-600">Hypertension</span> Diagnosis</h1>
+                        <h1 className="text-2xl font-bold tracking-tight text-stone-900 sm:text-5xl lg:text-5xl">
+                            Pulmonary <span className="text-indigo-600">Hypertension:</span> Diagnosis and Evaluation
+                        </h1>
                         <p className="mt-6 max-w-3xl text-xl text-stone-500">
-                            Strumento diagnostico.
+                            Getting Started with the Diagnostic Tool.
                         </p>
                     </div>
                 </div>

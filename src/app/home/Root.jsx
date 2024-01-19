@@ -1,5 +1,6 @@
 import React from 'react';
 import {Layout} from "../../components/Layout.jsx";
+import {Link} from "react-router-dom";
 
 const Polygon = () => (
     <svg className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]" aria-hidden="true">
@@ -33,12 +34,6 @@ const Paragraph = ({className, children}) => (
     </p>
 );
 
-const LinkBlock = ({href, className, children}) => (
-    <a href={href} className={className}>
-        {children} <span aria-hidden="true">→</span>
-    </a>
-);
-
 const Scenario = () => (
     <section aria-labelledby="cause-heading">
         <div className="relative bg-gray-800 px-6 py-32 sm:px-12 sm:py-40 lg:px-16">
@@ -51,11 +46,12 @@ const Scenario = () => (
                     Definition and clinical scenario
                 </h2>
                 <p className="mt-3 text-xl text-white">
-                    Example
+                    Pulmonary Hypertension is defined by a mean pulmonary arterial pressure (mPAP) &gt; 20 mmHg at rest,
+                    as determined by means of right heart catheterization.
                 </p>
-                <a href="#" className="mt-8 block w-full rounded-md border border-transparent bg-[#99cccc] px-8 py-3 text-base font-medium text-gray-900 hover:bg-[#77bbbb] sm:w-auto">
-                    Read our story
-                </a>
+                <Link to="/about" className="mt-8 block w-full rounded-md border border-transparent bg-[#99cccc] px-8 py-3 text-base font-medium text-gray-900 hover:bg-[#77bbbb] sm:w-auto">
+                    Read our work
+                </Link>
             </div>
         </div>
     </section>
@@ -69,17 +65,16 @@ export const Home = () => {
                     <Polygon/>
                     <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
                         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
-                            <img className="h-11" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company"/>
                             <Headline className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                                Take <span className="text-indigo-600">control</span> of your health
+                                Insights into <span className="text-indigo-600">Pulmonary Hypertension</span> Diagnosis.
                             </Headline>
                             <Paragraph className="mt-6 text-lg leading-8 text-gray-600">
                                 Pulmonary hypertension is a rare condition that can affect people of all ages, but it is more common in people who have another heart or lung condition.
                             </Paragraph>
                             <div className="mt-10 flex items-center gap-x-6">
-                                <LinkBlock href="" className="text-sm font-semibold leading-6 text-gray-900">
-                                    Learn more
-                                </LinkBlock>
+                                <Link to="/about" className="text-sm font-semibold leading-6 text-gray-900">
+                                    Learn more <span aria-hidden="true">&rarr;</span>
+                                </Link>
                             </div>
                         </div>
                         <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">

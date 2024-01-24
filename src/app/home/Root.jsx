@@ -38,7 +38,7 @@ const Scenario = () => (
     <section aria-labelledby="cause-heading">
         <div className="relative bg-gray-800 px-6 py-32 sm:px-12 sm:py-40 lg:px-16">
             <div className="absolute inset-0 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1666214280429-d3985e2ef0b4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzI0fHxjbGluaWNhbCUyMHN0dWRpZXN8ZW58MHwwfDB8fHww" alt="" className="h-full w-full object-cover object-center"/>
+                <img rel="preload" src="https://images.unsplash.com/photo-1666214280429-d3985e2ef0b4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzI0fHxjbGluaWNhbCUyMHN0dWRpZXN8ZW58MHwwfDB8fHww" alt="" className="h-full w-full object-cover object-center"/>
             </div>
             <div aria-hidden="true" className="absolute inset-0 bg-gray-900 bg-opacity-50"/>
             <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
@@ -80,7 +80,7 @@ export const Home = () => {
                         <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
                             <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
                                 <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 lg:ml-2">
-                                    <img src="/Adobe.jpeg" alt="App screenshot" width={800} height={1280} className="w-[76rem] rounded-md shadow-2xl ring-1 ring-gray-900/10"/>
+                                    <img rel="preload" src="/Home-min.jpeg" alt="App screenshot" width={800} height={1280} className="w-[76rem] rounded-md shadow-2xl ring-1 ring-gray-900/10"/>
                                 </div>
                             </div>
                         </div>

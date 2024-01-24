@@ -7,43 +7,22 @@ const posts = [
         id: 1,
         title: 'GROUP I - Pulmonary arterial hypertension',
         href: 'one',
-        description:
-            'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-        imageUrl: 'https://github.com/Denel91/uniud-app/blob/master/public/AdobeStock_628159488.jpeg?raw=true',
-        date: 'Mar 16, 2020',
-        datetime: '2020-03-16',
-        author: {
-            name: 'Michael Foster',
-            imageUrl: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        },
+        description: 'Image of group one',
+        imageUrl: '/card1-min.jpeg',
     },
     {
         id: 2,
         title: 'GROUP II - Pulmonary hypertension associated with left heart disease',
         href: 'two',
-        description:
-            'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-        imageUrl: 'https://github.com/Denel91/uniud-app/blob/master/public/AdobeStock_568113469.jpeg?raw=true',
-        date: 'Mar 16, 2020',
-        datetime: '2020-03-16',
-        author: {
-            name: 'Michael Foster',
-            imageUrl: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        },
+        description: 'Image of group two',
+        imageUrl: '/card2-min.jpeg',
     },
     {
         id: 3,
         title: 'GROUP III - Pulmonary hypertension associated with lung diseases and/or hypoxia',
         href: 'three',
-        description:
-            'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-        imageUrl: 'https://github.com/Denel91/uniud-app/blob/master/public/AdobeStock_596157071.jpeg?raw=true',
-        date: 'Mar 16, 2020',
-        datetime: '2020-03-16',
-        author: {
-            name: 'Michael Foster',
-            imageUrl: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        },
+        description: 'Image of group three',
+        imageUrl: '/card3-min.jpeg',
     },
 ]
 
@@ -52,29 +31,15 @@ const postsUnder = [
         id: 4,
         title: 'GROUP IV - Pulmonary hypertension associated with pulmonary artery obstructions',
         href: 'four',
-        description:
-            'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-        imageUrl: 'https://github.com/Denel91/uniud-app/blob/master/public/AdobeStock_607285922.jpeg?raw=true',
-        date: 'Mar 16, 2020',
-        datetime: '2020-03-16',
-        author: {
-            name: 'Michael Foster',
-            imageUrl: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        },
+        description: 'Image of group four',
+        imageUrl: '/card4-min.jpeg',
     },
     {
         id: 5,
         title: 'GROUP V - Pulmonary hypertension with unclear and/or multifactorial mechanisms',
         href: 'five',
-        description:
-            'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-        imageUrl: 'https://github.com/Denel91/uniud-app/blob/master/public/AdobeStock_575211552.jpeg?raw=true',
-        date: 'Mar 16, 2020',
-        datetime: '2020-03-16',
-        author: {
-            name: 'Michael Foster',
-            imageUrl: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        },
+        description: 'Image of group five',
+        imageUrl: '/card5-min.jpeg',
     },
 ]
 
@@ -93,7 +58,7 @@ export const Groups = () => {
                     {
                         posts.map((post) => (
                             <article key={post.id} className="relative isolate flex flex-col justify-center overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80">
-                                <img src={post.imageUrl} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover"/>
+                                <img rel="preload" src={post.imageUrl} alt={post.description} className="absolute inset-0 -z-10 h-full w-full object-cover"/>
                                 <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"/>
                                 <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"/>
                                 <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
@@ -109,7 +74,7 @@ export const Groups = () => {
                     {
                         postsUnder.map((post) => (
                             <article key={post.id} className="relative isolate flex flex-col justify-center overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80">
-                                <img src={post.imageUrl} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover"/>
+                                <img rel="preload" src={post.imageUrl} alt={post.description} className="absolute inset-0 -z-10 h-full w-full object-cover"/>
                                 <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"/>
                                 <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"/>
                                 <h3 className="mt-3 text-lg font-semibold leading-6 text-white">

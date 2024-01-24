@@ -38,7 +38,7 @@ const Scenario = () => (
     <section aria-labelledby="cause-heading">
         <div className="relative bg-gray-800 px-6 py-32 sm:px-12 sm:py-40 lg:px-16">
             <div className="absolute inset-0 overflow-hidden">
-                <img rel="preload" loading="lazy" src="https://images.unsplash.com/photo-1666214280429-d3985e2ef0b4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzI0fHxjbGluaWNhbCUyMHN0dWRpZXN8ZW58MHwwfDB8fHww" alt="" className="h-full w-full object-cover object-center"/>
+                <img rel="preload" loading="lazy" src="https://images.unsplash.com/photo-1666214280429-d3985e2ef0b4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzI0fHxjbGluaWNhbCUyMHN0dWRpZXN8ZW58MHwwfDB8fHww" alt="Image of home page" className="h-full w-full object-cover object-center"/>
             </div>
             <div aria-hidden="true" className="absolute inset-0 bg-gray-900 bg-opacity-50"/>
             <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">

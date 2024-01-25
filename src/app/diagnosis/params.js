@@ -1,50 +1,54 @@
 export const paramsData = [
     {
         id: 1,
-        name: "emp"
+        name: "Emphysema"
     },
     {
         id: 2,
-        name: "fib"
+        name: "Airway disease"
     },
     {
         id: 3,
-        name: "ggo"
+        name: "Fibrosis"
     },
     {
         id: 4,
-        name: "mos"
+        name: "Centrilob ggo nodules"
     },
     {
         id: 5,
-        name: "lhd"
+        name: "Mosaic"
     },
     {
         id: 6,
-        name: "cor"
+        name: "Left atrium ap"
     },
     {
         id: 7,
-        name: "val"
+        name: "Coronary calcif"
     },
     {
         id: 8,
-        name: "anom"
+        name: "Valvular calcif"
     },
     {
         id: 9,
-        name: "CTEPE"
+        name: "Cong heart disease"
     },
     {
         id: 10,
-        name: "lymph"
+        name: "Ctepd"
     },
     {
         id: 11,
-        name: "eso"
+        name: "Lymph nodes"
     },
     {
         id: 12,
-        name: "porIT"
+        name: "Esophageal dilat"
+    },
+    {
+        id: 13,
+        name: "Portal hypertens"
     },
 ];

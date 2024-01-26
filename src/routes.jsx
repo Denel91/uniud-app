@@ -11,6 +11,7 @@ import {GroupTwo} from "./app/groups/group_two/GroupTwo.jsx";
 import {GroupThree} from "./app/groups/group_three/GroupThree.jsx";
 import {GroupFour} from "./app/groups/groups_four/GroupFour.jsx";
 import {GroupFive} from "./app/groups/group_five/GroupFive.jsx";
+import {Findings} from "./app/ findings/ Findings.jsx";
 
 /**
  * Creates a browser router with the given routes.
@@ -54,6 +55,10 @@ export const router = createBrowserRouter(
                     element: <GroupFive/>,
                 },
             ],
+        },
+        {
+            path: "/findings",
+            element: <Findings/>,
         },
         {
             path: "/diagnosis",

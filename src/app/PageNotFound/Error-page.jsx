@@ -30,37 +30,82 @@ const CLASS_WRAPPER = "mx-auto max-w-7xl px-6 py-32 text-center sm:py-40 lg:px-8
  */
 const CLASS_BACK_HOME = "text-sm font-semibold leading-7 text-white";
 
-/**
- * The text displayed for the "Back to home" button.
+/** The text for the "Back to home" button or link.
  *
  * @type {string}
+ * @constant
  */
 const BACK_HOME_TEXT = "Back to home";
 
 /**
- * Error page component.
+ * Represents a placeholder image for when a page is not found.
+ *
+ * @returns {JSX.Element} The JSX element representing the placeholder image.
+ */
+const NotFoundImage = () => (
+    <img src={NOT_FOUND_IMAGE_URL} alt="page not found" className={CLASS_IMAGE}/>
+);
+
+/**
+ * Represents an error message component.
+ *
+ * @typedef {Object} ErrorMessage
+ * @property {Object} error - The error object containing the status and statusText properties.
+ * @property {number} error.status - The status code of the error.
+ * @property {string} error.statusText - The status text of the error.
+ *
+ * @returns {JSX.Element} - The rendered error message component.
+ */
+const ErrorMessage = ({error}) => (
+    <>
+        <p className="text-2xl font-semibold leading-8 text-white">{error.status}</p>
+        <h1 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-5xl">Page {error.statusText}</h1>
+        <p className="mt-4 text-base text-white/70 sm:mt-6"><i>Sorry, we couldn’t find the page you’re looking for.</i></p>
+    </>
+);
+
+/**
+ * Represents a back home button component.
+ *
+ * @component
+ * @return {JSX.Element} The back home button JSX element.
+ */
+const BackHomeButton = () => (
+    <div className="mt-10 flex justify-center">
+        <Link to="/" className={CLASS_BACK_HOME}>
+            <span aria-hidden="true">&larr;</span> {BACK_HOME_TEXT}
+        </Link>
+    </div>
+);
+
+/**
+ * A functional component that wraps an error and displays it along with
+ * a button to go back to the homepage.
+ *
+ * @param {Object} props - The props object.
+ * @param {Error} props.error - The error to be displayed.
+ * @returns {JSX.Element} The rendered ErrorWrapper component.
+ */
+const ErrorWrapper = ({error}) => (
+    <div className={CLASS_WRAPPER}>
+        <ErrorMessage error={error}/>
+        <BackHomeButton />
+    </div>
+);
+
+/**
+ * Represents an Error Page component.
  *
  * @function ErrorPage
- * @returns {JSX.Element} - The error page component.
+ * @returns {React.JSX.Element} - The Error Page component.
  */
 export const ErrorPage = () => {
     const error = useRouteError();
 
     return (
-        <>
-            <main className="relative isolate min-h-screen">
-                <img src={NOT_FOUND_IMAGE_URL} alt="page not found" className={CLASS_IMAGE}/>
-                <div className={CLASS_WRAPPER}>
-                    <p className="text-2xl font-semibold leading-8 text-white">{error.status}</p>
-                    <h1 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-5xl">Page {error.statusText}</h1>
-                    <p className="mt-4 text-base text-white/70 sm:mt-6"><i>Sorry, we couldn’t find the page you’re looking for.</i></p>
-                    <div className="mt-10 flex justify-center">
-                        <Link to="/" className={CLASS_BACK_HOME}>
-                            <span aria-hidden="true">&larr;</span> {BACK_HOME_TEXT}
-                        </Link>
-                    </div>
-                </div>
-            </main>
-        </>
+        <main className="relative isolate min-h-screen">
+            <NotFoundImage/>
+            <ErrorWrapper error={error}/>
+        </main>
     );
 };

@@ -9,7 +9,7 @@ import {AboutUs} from "./app/about/AboutUs.jsx";
 import {GroupOne} from "./app/groups/group_one/GroupOne.jsx";
 import {GroupTwo} from "./app/groups/group_two/GroupTwo.jsx";
 import {GroupThree} from "./app/groups/group_three/GroupThree.jsx";
-import {GroupFour} from "./app/groups/groups_four/GroupFour.jsx";
+import {GroupFour} from "./app/groups/group_four/GroupFour.jsx";
 import {GroupFive} from "./app/groups/group_five/GroupFive.jsx";
 import {Findings} from "./app/ findings/ Findings.jsx";
 
@@ -33,28 +33,26 @@ export const router = createBrowserRouter(
         {
             path: "/groups",
             element: <Groups/>,
-            children: [
-                {
-                    path:"one",
-                    element: <GroupOne/>,
-                },
-                {
-                    path:"two",
-                    element: <GroupTwo/>,
-                },
-                {
-                    path:"three",
-                    element: <GroupThree/>,
-                },
-                {
-                    path:"four",
-                    element: <GroupFour/>,
-                },
-                {
-                    path:"five",
-                    element: <GroupFive/>,
-                },
-            ],
+        },
+        {
+            path: "groups/GroupOne",
+            element: <GroupOne/>
+        },
+        {
+            path: "groups/GroupTwo",
+            element: <GroupTwo/>
+        },
+        {
+            path: "groups/GroupThree",
+            element: <GroupThree/>
+        },
+        {
+            path: "groups/GroupFour",
+            element: <GroupFour/>
+        },
+        {
+            path: "groups/GroupFive",
+            element: <GroupFive/>
         },
         {
             path: "/findings",

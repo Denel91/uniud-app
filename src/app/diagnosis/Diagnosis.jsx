@@ -59,7 +59,6 @@ const Decoration = () => {
                 <rect width={404} height={384} fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)"/>
             </svg>
         </div>
-
     );
 };
 
@@ -80,8 +79,7 @@ const Controls = ({paramsData}) => {
                 {paramsData.map((item, itemIdx) => (
                     <div key={itemIdx} className="relative flex items-start py-4">
                         <div className="min-w-0 flex-1 text-sm leading-6">
-                            <label htmlFor={`person-${item.id}`}
-                                   className="select-none font-medium text-gray-900">
+                            <label htmlFor={`person-${item.id}`} className="select-none font-medium text-gray-900">
                                 {item.name}
                             </label>
                         </div>
@@ -136,7 +134,8 @@ export const Diagnosis = () => {
     return (
         <Layout>
             <main className="overflow-hidden">
-                <TitleSection title="Pulmonary" span="Hypertension" description="Diagnosis and Evaluation"
+                <TitleSection title="Pulmonary" span="Hypertension"
+                              description="Diagnosis and Evaluation"
                               subtitle='Getting Started with the Diagnostic Tool.'/>
                 <section className="relative bg-white">
                     <div className="absolute h-1/2 w-full bg-stone-50" aria-hidden="true"/>
@@ -146,4 +145,4 @@ export const Diagnosis = () => {
             </main>
         </Layout>
     );
-}
+};

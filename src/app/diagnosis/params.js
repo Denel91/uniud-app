@@ -1,7 +1,7 @@
 export const paramsData = [
     {
         id: 1,
-        name: "Emphysema"
+        name: "Emphysema",
     },
     {
         id: 2,

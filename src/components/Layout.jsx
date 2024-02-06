@@ -8,7 +8,7 @@ import {Footer} from "./Footer.jsx";
  * @param {Object} props - The properties passed to the Layout component
  * @param {ReactNode} props.children - The content to be wrapped by the layout
  *
- * @returns {ReactElement} The layout component
+ * @returns {React.JSX.Element} The layout component
  */
 export const Layout = ({children}) => {
     return (

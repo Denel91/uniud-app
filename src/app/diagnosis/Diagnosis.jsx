@@ -128,7 +128,7 @@ const DiagnosisSection = ({paramsData}) => {
  *
  * The Diagnosis component is responsible for rendering the Diagnosis and Evaluation section in the application.
  *
- * @returns {ReactElement} The rendered Diagnosis component.
+ * @returns {React.JSX.Element} The rendered Diagnosis component.
  */
 export const Diagnosis = () => {
     return (

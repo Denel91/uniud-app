@@ -1,7 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import {Layout} from "../../components/Layout.jsx";
 import {paramsData} from "./params.js";
 import {Button} from "@nextui-org/react";
+import axios from "axios";
+import {Modal} from "../../components/Modal.jsx"
+import {Modal_Error} from "../../components/Modal_Error.jsx";
+
+const API_URL = 'https://mitel.dimi.uniud.it/ph/api.php';
 
 /**
  * TitleSection is a functional component that displays a section with a title, span, description, and subtitle.
@@ -71,33 +76,83 @@ const Decoration = () => {
  * @returns {JSX.Element} The rendered fieldset component.
  */
 const Controls = ({paramsData}) => {
+    const [selectedItems, setSelectedItems] = useState([])
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalData, setModalData] = useState(null);
+    const [showError, setShowError] = useState(false);
+
+    const handleChange = (e, item) => {
+        if (e.target.checked) {
+            setSelectedItems(selectedItems => [...selectedItems, item.name]);
+            console.log("Parametro aggiunto: ", selectedItems)
+        } else {
+            setSelectedItems(selectedItems => selectedItems.filter(name => name !== item.name));
+            console.log("Parametro rimosso: ", selectedItems)
+
+        }
+    };
+
+    const handleClick = async () => {
+        if (!Array.isArray(selectedItems) || selectedItems.length === 0) {
+            setSelectedItems([]);
+            setShowError(true);
+            return;
+        }
+
+        setShowError(false);
+        let params = "";
+        for (let i = 0; i < selectedItems.length; i++) {
+            params += selectedItems[i] + "=1";
+            if (i !== selectedItems.length - 1) { // Non siamo all'ultimo elemento
+                params += "&";
+            }
+        }
+
+        try {
+            await axios.post(API_URL, params).then(response => {
+                setSelectedItems(response.data);
+                setModalData(response.data); // Store response data for modal
+                setIsModalOpen(true);
+            });
+        } catch (error) {
+            setShowError(true);
+        }
+    };
+
     return (
-        <fieldset>
-            <legend className="text-base font-semibold leading-6 text-gray-900">Parametri
-            </legend>
-            <div className="mt-4 divide-y divide-gray-200 border-b border-t border-gray-200">
-                {paramsData.map((item, itemIdx) => (
-                    <div key={itemIdx} className="relative flex items-start py-4">
-                        <div className="min-w-0 flex-1 text-sm leading-6">
-                            <label htmlFor={`person-${item.id}`} className="select-none font-medium text-gray-900">
-                                {item.name}
-                            </label>
-                        </div>
-                        <div className="ml-3 flex h-6 items-center">
-                            <input
-                                id={`person-${item.id}`}
-                                name={`person-${item.id}`}
-                                type="checkbox"
-                                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                            />
-                        </div>
+        <>
+            <form>
+                <fieldset>
+                    <legend className="text-base font-semibold leading-6 text-gray-900">Parameters</legend>
+                    <div className="mt-4 divide-y divide-gray-200 border-b border-t border-gray-200">
+                        {paramsData.map((item, itemIdx) => (
+                            <div key={itemIdx} className="relative flex items-start py-4">
+                                <div className="min-w-0 flex-1 text-sm leading-6">
+                                    <label htmlFor={item.name} className="select-none font-medium text-gray-900">
+                                        {item.name}
+                                    </label>
+                                </div>
+                                <div className="ml-3 flex h-6 items-center">
+                                    <input
+                                        id={item.id}
+                                        name={item.name}
+                                        value="1"
+                                        type="checkbox"
+                                        onChange={(e) => handleChange(e, item)}
+                                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                                    />
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
-            <div className="mx-auto max-w-7xl mt-8 px-6 py-8 lg:px-8 flex justify-center">
-                <Button color="primary" variant="flat" size="lg">Suggest diagnosis</Button>
-            </div>
-        </fieldset>
+                    <div className="mx-auto max-w-7xl mt-8 px-6 py-8 lg:px-8 flex justify-center">
+                        <Button onClick={handleClick} color="primary" variant="flat" size="lg">Suggest diagnosis</Button>
+                    </div>
+                </fieldset>
+            </form>
+            {isModalOpen && <Modal data={modalData}/>}
+            {showError && <Modal_Error/>}
+        </>
     );
 };
 

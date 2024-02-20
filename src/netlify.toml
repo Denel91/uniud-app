@@ -7,3 +7,8 @@ status = 404
 from = "/*"
 to = "/index.html"
 status = 200
+
+[[redirects]]
+from = "/home"
+to = "src/app/diagnosis/Diagnosis.jsx"
+status = 301

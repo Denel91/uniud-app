@@ -5,5 +5,5 @@ status = 404
 
 [[redirects]]
 from = "/*"
-to = "/Root.jsx"
+to = "/main.jsx"
 status = 200

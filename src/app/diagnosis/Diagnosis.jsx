@@ -27,7 +27,7 @@ const TitleSection = ({title, span, description, subtitle}) => {
                     <h1 className="text-2xl font-bold tracking-tight text-stone-900 sm:text-5xl lg:text-5xl">
                         {title} <span className="text-indigo-600">{span}:</span> {description}
                     </h1>
-                    <p className="mt-6 max-w-3xl text-xl text-stone-500">
+                    <p className="mt-10 max-w-3xl text-xl text-stone-600">
                         {subtitle}
                     </p>
                 </div>
@@ -76,42 +76,54 @@ const Decoration = () => {
  * @returns {JSX.Element} The rendered fieldset component.
  */
 const Controls = ({paramsData}) => {
-    const [selectedItems, setSelectedItems] = useState([])
+    const [selectedItems, setSelectedItems] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalData, setModalData] = useState(null);
     const [showError, setShowError] = useState(false);
+    const [textInputValue, setTextInputValue] = useState('');
 
     const handleChange = (e, item) => {
-        if (e.target.checked) {
+        const textInputName = "LEFT_ATRIUM";
+        const {checked} = e.target;
+
+        if (textInputValue !== '' && !selectedItems.includes(textInputName)) {
+            setSelectedItems(selectedItems => [...selectedItems, textInputName]);
+        }
+
+        if (checked || textInputValue !== '') {
             setSelectedItems(selectedItems => [...selectedItems, item.name]);
-            console.log("Parametro aggiunto: ", selectedItems)
+
         } else {
             setSelectedItems(selectedItems => selectedItems.filter(name => name !== item.name));
-            console.log("Parametro rimosso: ", selectedItems)
-
         }
+    };
+
+    const handleTextChange = (e) => {
+        setTextInputValue(e.target.value);
     };
 
     const handleClick = async () => {
         if (!Array.isArray(selectedItems) || selectedItems.length === 0) {
-            setSelectedItems([]);
             setShowError(true);
             return;
         }
 
         setShowError(false);
-        let params = "";
-        for (let i = 0; i < selectedItems.length; i++) {
-            params += selectedItems[i] + "=1";
-            if (i !== selectedItems.length - 1) { // Non siamo all'ultimo elemento
-                params += "&";
+
+        let params = new URLSearchParams();
+        const textInputName = "LEFT_ATRIUM";
+        for (const item of selectedItems) {
+            if (item === textInputName) {
+                params.set(item, textInputValue);
+            } else {
+                params.set(item, "1");
             }
         }
 
         try {
-            await axios.post(API_URL, params).then(response => {
-                setSelectedItems(response.data);
-                setModalData(response.data); // Store response data for modal
+             await axios.post(API_URL, params.toString()).then((response) => {
+                console.log("RESPONSE DATA", response.data);
+                setModalData(response.data);
                 setIsModalOpen(true);
             });
         } catch (error) {
@@ -119,11 +131,26 @@ const Controls = ({paramsData}) => {
         }
     };
 
+    const handleResetData = () => {
+        setModalData(null);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+        setSelectedItems([]);
+        setTextInputValue('');
+        handleResetData();
+    };
+
+    const handleErrorModal = () => {
+        setShowError(false);
+    };
+
     return (
         <>
             <form>
                 <fieldset>
-                    <legend className="text-base font-semibold leading-6 text-gray-900">Parameters</legend>
+                    <legend className="text-xl font-semibold leading-6 text-gray-900">Parameters</legend>
                     <div className="mt-4 divide-y divide-gray-200 border-b border-t border-gray-200">
                         {paramsData.map((item, itemIdx) => (
                             <div key={itemIdx} className="relative flex items-start py-4">
@@ -133,14 +160,28 @@ const Controls = ({paramsData}) => {
                                     </label>
                                 </div>
                                 <div className="ml-3 flex h-6 items-center">
+                                    {item.type === "text" ? (
+                                        <input
+                                            id={item.id}
+                                            name={item.name}
+                                            type={item.type}
+                                            checked={selectedItems.includes(item.name)}
+                                            value={textInputValue}
+                                            onChange={handleTextChange}
+                                            placeholder="0.00"
+                                            className="h-6 w-24 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                                        />
+                                    ) : (
                                     <input
                                         id={item.id}
                                         name={item.name}
                                         value="1"
-                                        type="checkbox"
+                                        type={item.type}
+                                        checked={selectedItems.includes(item.name)}
                                         onChange={(e) => handleChange(e, item)}
-                                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                                        className="h-6 w-6 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                     />
+                                    )}
                                 </div>
                             </div>
                         ))}
@@ -150,8 +191,8 @@ const Controls = ({paramsData}) => {
                     </div>
                 </fieldset>
             </form>
-            {isModalOpen && <Modal data={modalData}/>}
-            {showError && <Modal_Error/>}
+            {!showError && isModalOpen && <Modal data={modalData} onClose={handleCloseModal} resetData={handleResetData}/>}
+            {showError && <Modal_Error handleModal={handleErrorModal}/>}
         </>
     );
 };
@@ -167,7 +208,7 @@ const DiagnosisSection = ({paramsData}) => {
     return (
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="relative bg-white shadow-xl mb-8">
-                <div className="grid grid-cols-1 lg:grid-cols-3">
+                <div className="grid grid-cols-1 lg:grid-cols-3 -mt-14">
                     <div className="relative overflow-hidden bg-gradient-to-r from-cyan-500 to-indigo-500 "></div>
                     <div className="px-6 py-10 sm:px-10 lg:col-span-2 xl:p-12">
                         <Controls paramsData={paramsData}/>

@@ -1,15 +1,22 @@
-import {Fragment, useState} from 'react';
+import {Fragment, useEffect, useState} from 'react';
 import {Dialog, Transition} from '@headlessui/react';
 import {ShieldCheckIcon} from '@heroicons/react/24/outline';
+import {Button} from "@nextui-org/react";
 
-export const Modal = ({data, onClose}) => {
-    const [open, setOpen] = useState(true)
+export const Modal = ({data, onClose, resetData}) => {
+    const [open, setOpen] = useState(true);
     const {group, confidence} = data;
 
     const handleClose = () => {
         setOpen(false);
         onClose && onClose();
     };
+
+    useEffect(() => {
+        if (!open) {
+            resetData && resetData();
+        }
+    }, [open, resetData]);
 
     return (
         <Transition.Root show={open} as={Fragment}>
@@ -53,9 +60,7 @@ export const Modal = ({data, onClose}) => {
                                     </div>
                                 </div>
                                 <div className="mt-5 sm:mt-6">
-                                    <button type="button" className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onClick={handleClose}>
-                                        Go back to diagnostic tool
-                                    </button>
+                                    <Button type="button" onClick={handleClose} radius="lg"  size="md" variant="flat" className="inline-flex w-full justify-center bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Go back to diagnostic tool</Button>
                                 </div>
                             </Dialog.Panel>
                         </Transition.Child>

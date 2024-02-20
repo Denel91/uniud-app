@@ -1,14 +1,21 @@
-import {Fragment, useState} from 'react'
+import {Fragment, useEffect, useState} from 'react'
 import {Dialog, Transition} from '@headlessui/react'
 import {ExclamationTriangleIcon} from '@heroicons/react/24/outline'
+import {Button} from "@nextui-org/react";
 
-export const Modal_Error = ({onClose}) => {
-    const [open, setOpen] = useState(true)
+export const Modal_Error = ({onClose, handleModal}) => {
+    const [open, setOpen] = useState(true);
 
     const handleClose = () => {
         setOpen(false);
         onClose && onClose();
     };
+
+    useEffect(() => {
+        if (!open) {
+            handleModal && handleModal();
+        }
+    }, [open, handleModal]);
 
     return (
         <Transition.Root show={open} as={Fragment}>
@@ -55,11 +62,7 @@ export const Modal_Error = ({onClose}) => {
                                     </div>
                                 </div>
                                 <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                                    <button type="button"
-                                            className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
-                                            onClick={handleClose}>
-                                        Go back
-                                    </button>
+                                    <Button type="button" variant="flat" radius="lg" size="lg" color="danger" onClick={handleClose}>Go back</Button>
                                 </div>
                             </Dialog.Panel>
                         </Transition.Child>

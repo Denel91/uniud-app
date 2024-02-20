@@ -5,10 +5,6 @@ status = 404
 
 [[redirects]]
 from = "/*"
-to = "/index.html"
+to = "/App.jsx"
 status = 200
 
-[[redirects]]
-from = "/home"
-to = "src/app/diagnosis/Diagnosis.jsx"
-status = 301

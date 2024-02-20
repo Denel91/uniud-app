@@ -4,26 +4,6 @@ to = "src/app/PageNotFound/Error-page.jsx"
 status = 404
 
 [[redirects]]
-from = "/home"
+from = "/*"
 to = "src/app/home/Root.jsx"
-status = 200
-
-[[redirects]]
-from = "/groups"
-to = "src/app/groups/Groups.jsx"
-status = 200
-
-[[redirects]]
-from = "/about"
-to = "src/app/about/AboutUs.jsx"
-status = 200
-
-[[redirects]]
-from = "/findings"
-to = "src/app/findings/Findings.jsx"
-status = 200
-
-[[redirects]]
-from = "/diagnosis"
-to = "src/app/diagnosis/Diagnosis.jsx"
 status = 200

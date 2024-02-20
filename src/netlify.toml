@@ -5,25 +5,25 @@ status = 404
 
 [[redirects]]
 from = "/home"
-to = "/Root.jsx"
+to = "src/app/home/Root.jsx"
 status = 200
 
 [[redirects]]
 from = "/groups"
-to = "/Groups.jsx"
+to = "src/app/groups/Groups.jsx"
 status = 200
 
 [[redirects]]
 from = "/about"
-to = "/AboutUs.jsx"
+to = "src/app/about/AboutUs.jsx"
 status = 200
 
 [[redirects]]
 from = "/findings"
-to = "/Findings.jsx"
+to = "src/app/findings/Findings.jsx"
 status = 200
 
 [[redirects]]
 from = "/diagnosis"
-to = "/Diagnosis.jsx"
+to = "src/app/diagnosis/Diagnosis.jsx"
 status = 200

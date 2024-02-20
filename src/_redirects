@@ -1,1 +1,16 @@
-/*  /main.jsx  200
+# _redirects
+
+# Home page
+/home /src/app/home/Root.jsx 200
+
+# Groups page
+/groups /src/app/groups/Groups.jsx 200
+
+# About Us page
+/about /src/app/about/AboutUs.jsx 200
+
+# Findings page
+/findings /src/app/findings/Findings.jsx 200
+
+# Diagnosis page
+/diagnosis /src/app/diagnosis/Diagnosis.jsx 200

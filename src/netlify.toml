@@ -2,3 +2,28 @@
 from = "/*"
 to = "src/app/PageNotFound/Error-page.jsx"
 status = 404
+
+[[redirects]]
+from = "/*"
+to = "src/app/home/Root.jsx"
+status = 301
+
+[[redirects]]
+from = "/*"
+to = "src/app/groups/Groups.jsx"
+status = 301
+
+[[redirects]]
+from = "/*"
+to = "src/app/about/AboutUs.jsx"
+status = 301
+
+[[redirects]]
+from = "/*"
+to = "src/app/findings/Findings.jsx"
+status = 301
+
+[[redirects]]
+from = "/*"
+to = "src/app/diagnosis/Diagnosis.jsx"
+status = 301

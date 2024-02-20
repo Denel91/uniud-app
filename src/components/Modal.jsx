@@ -54,7 +54,7 @@ export const Modal = ({data, onClose, resetData}) => {
                                         </Dialog.Title>
                                         <div className="mt-6">
                                             <p className="text-xl text-black">
-                                               {group}, Confidence: {confidence}%
+                                               {group}, Confidence: {confidence}
                                             </p>
                                         </div>
                                     </div>

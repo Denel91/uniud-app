@@ -1,4 +1,2 @@
 # Netlify redirects file
 /*    /index.html    200
-/home   /
-/home   /diagnosis 200

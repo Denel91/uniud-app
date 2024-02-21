@@ -1,5 +1,6 @@
-/home      /
-/about     https://phdiagnosis.netlify.app/about
-/groups    https://phdiagnosis.netlify.app/groups
-/findings  https://phdiagnosis.netlify.app/findings
-/diagnosis https://phdiagnosis.netlify.app/diagnosis
+# Netlify redirects file
+/home      /src/app/home/Root.jsx 301
+/about     /src/app/about/AboutUs.jsx 301
+/groups    /src/app/groups/Groups.jsx 301
+/findings  /src/app/findings/Findings.jsx 301
+/diagnosis /src/app/diagnosis/Diagnosis.jsx 301

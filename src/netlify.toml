@@ -3,8 +3,4 @@ from = "/*"
 to = "src/app/PageNotFound/Error-page.jsx"
 status = 404
 
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
 

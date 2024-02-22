@@ -2,13 +2,14 @@ import React, {useState} from "react";
 import {Bars3Icon, XMarkIcon} from "@heroicons/react/24/outline";
 import {Dialog} from "@headlessui/react";
 import {Link} from "react-router-dom";
+import {Image} from "@nextui-org/react";
 
 const navigation = [
     {id: '1', name: 'Home', href: '/'},
     {id: '2', name: 'About', href: '/about'},
     {id: '3', name: 'Groups', href: '/groups'},
-    {id: '4', name: 'Chest imaging', href: '/findings'},
-    {id: '5', name: 'Diagnosis', href: '/diagnosis'},
+    {id: '4', name: 'Chest CT imaging', href: '/findings'},
+    {id: '5', name: 'Educational tool', href: '/diagnosis'},
 ];
 
 /**
@@ -29,10 +30,10 @@ const MobileMenu = ({open, setOpen}) => {
             <Dialog.Panel
                 className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                 <div className="flex items-center justify-between">
-                    <a href="#" className="-m-1.5 p-1.5">
+                    <Link to="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">UNIUD</span>
-                        <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Logo"/>
-                    </a>
+                        <Image src="public/Icona app circolare.svg" height={40} width={40} alt="logo_header"/>
+                    </Link>
                     <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700" onClick={() => setOpen(false)}>
                         <span className="sr-only">Close menu</span>
                         <XMarkIcon className="h-6 w-6" aria-hidden="true"/>
@@ -59,8 +60,7 @@ const LinkSection = ({className}) => {
     return (
         <Link to="/" className={className}>
             <span className="sr-only">Uniud</span>
-            <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                 alt="logo_header"/>
+            <Image src="public/Icona app circolare.svg" height={40} width={40} alt="logo_header"/>
         </Link>
     );
 };

@@ -168,7 +168,7 @@ const Controls = ({paramsData}) => {
                                             checked={selectedItems.includes(item.name)}
                                             value={textInputValue}
                                             onChange={handleTextChange}
-                                            placeholder="0.00"
+                                            placeholder="0.00 mm"
                                             className="h-6 w-24 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                         />
                                     ) : (

@@ -6,8 +6,8 @@ const navigation = {
         {id: "1", name: 'Home', href: '/'},
         {id: "2", name: 'About', href: '/about'},
         {id: "3", name: 'Groups', href: '/groups'},
-        {id: '4', name: 'Chest imaging', href: '/findings'},
-        {id: "5", name: 'Diagnosis', href: '/diagnosis'},
+        {id: '4', name: 'Chest CT imaging', href: '/findings'},
+        {id: "5", name: 'Educational tool', href: '/diagnosis'},
         {id: "6", name: 'Documentation', href: '/toDo'},
     ],
     social: [

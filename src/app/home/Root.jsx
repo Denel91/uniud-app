@@ -87,12 +87,14 @@ const ImageSection = () => {
 
 const Header = () => {
     return (
-        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
-            <Headline className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                Insights into <span className="text-indigo-600">Pulmonary Hypertension</span> Diagnosis.
+        <div className="mx-auto max-w-3xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
+            <Headline className="lg:-mt-12 mt-2 lg:leading-tight text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                Imaging insights into <span className="text-indigo-600">Pulmonary Hypertension</span>:
+                <hr/>
+                An educational tool.
             </Headline>
-            <Paragraph className="mt-6 text-lg leading-8 text-gray-600">
-                Istituto di Radiologia, Dipartimento di Area Medica (DAME), Università degli Studi di Udine.
+            <Paragraph className="mt-6 text-lg text-gray-600">
+                Istituto di Radiologia, Dipartimento di Medicina (DMED), Università degli Studi di Udine.
             </Paragraph>
             <LinkSection/>
         </div>

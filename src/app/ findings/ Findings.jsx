@@ -7,16 +7,14 @@ const Header = () => {
         <>
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Chest <span
                 className="text-indigo-600">imaging</span></h2>
-            <p className="mt-2 text-lg leading-8 text-gray-700">Synoptical tables.</p>
         </>
     );
 };
 
 const ImageCard = ({post}) => {
     return (
-        <div className="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-72 lg:shrink-0">
-            <img src={post.imageUrl} alt="chest imaging"
-                 className="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover"/>
+        <div className="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-80 lg:shrink-0">
+            <img src={post.imageUrl} alt="chest imaging" className="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover"/>
             <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10 border-2 shadow-2xl"/>
         </div>
     );

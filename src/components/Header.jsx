@@ -32,7 +32,7 @@ const MobileMenu = ({open, setOpen}) => {
                 <div className="flex items-center justify-between">
                     <Link to="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">UNIUD</span>
-                        <Image src="public/Icona app circolare.svg" height={40} width={40} alt="logo_header"/>
+                        <Image src="src/assets/logo_header.svg" height={40} width={40} alt="logo_header"/>
                     </Link>
                     <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700" onClick={() => setOpen(false)}>
                         <span className="sr-only">Close menu</span>
@@ -60,7 +60,7 @@ const LinkSection = ({className}) => {
     return (
         <Link to="/" className={className}>
             <span className="sr-only">Uniud</span>
-            <Image src="public/Icona app circolare.svg" height={40} width={40} alt="logo_header"/>
+            <Image src="src/assets/logo_header.svg" height={40} width={40} alt="logo_header"/>
         </Link>
     );
 };

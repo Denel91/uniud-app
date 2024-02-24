@@ -14,20 +14,19 @@ const API_URL = 'https://mitel.dimi.uniud.it/ph/api.php';
  * @param {Object} props - The props object containing the title, span, description, and subtitle properties.
  * @param {string} props.title - The title of the section.
  * @param {string} props.span - The span text to be displayed with the title.
- * @param {string} props.description - The description text to be displayed with the title and span.
  * @param {string} props.subtitle - The subtitle text to be displayed in the section.
  *
  * @returns {JSX.Element} The rendered title section component.
  */
-const TitleSection = ({title, span, description, subtitle}) => {
+const TitleSection = ({title, span, subtitle}) => {
     return (
         <div className="bg-stone-50">
             <div className="py-24 lg:py-32">
                 <div className="relative z-10 mx-auto max-w-7xl pl-4 pr-8 sm:px-6 lg:px-8">
-                    <h1 className="text-2xl font-bold tracking-tight text-stone-900 sm:text-5xl lg:text-5xl">
-                        {title} <span className="text-indigo-600">{span}:</span> {description}
+                    <h1 className="text-2xl font-bold tracking-tight text-indigo-600 sm:text-5xl lg:text-5xl">
+                        {title} <span className="text-gray-900">{span}</span>
                     </h1>
-                    <p className="mt-10 max-w-3xl text-xl text-stone-600">
+                    <p className="mt-10 max-w-3xl text-xl text-gray-900">
                         {subtitle}
                     </p>
                 </div>
@@ -156,7 +155,7 @@ const Controls = ({paramsData}) => {
                             <div key={itemIdx} className="relative flex items-start py-4">
                                 <div className="min-w-0 flex-1 text-sm leading-6">
                                     <label htmlFor={item.name} className="select-none font-medium text-gray-900">
-                                        {item.name}
+                                        {item.label}
                                     </label>
                                 </div>
                                 <div className="ml-3 flex h-6 items-center">
@@ -168,7 +167,7 @@ const Controls = ({paramsData}) => {
                                             checked={selectedItems.includes(item.name)}
                                             value={textInputValue}
                                             onChange={handleTextChange}
-                                            placeholder="0.00 mm"
+                                            placeholder="mm"
                                             className="h-6 w-24 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                         />
                                     ) : (
@@ -187,7 +186,7 @@ const Controls = ({paramsData}) => {
                         ))}
                     </div>
                     <div className="mx-auto max-w-7xl mt-8 px-6 py-8 lg:px-8 flex justify-center">
-                        <Button onClick={handleClick} color="primary" variant="flat" size="lg">Suggest diagnosis</Button>
+                        <Button onClick={handleClick} color="primary" variant="flat" size="lg">Suggest group hypothesis</Button>
                     </div>
                 </fieldset>
             </form>
@@ -230,9 +229,7 @@ export const Diagnosis = () => {
     return (
         <Layout>
             <main className="overflow-hidden">
-                <TitleSection title="Pulmonary" span="Hypertension"
-                              description="Diagnosis and Evaluation"
-                              subtitle='Getting Started with the Diagnostic Tool.'/>
+                <TitleSection title="Pulmonary Hypertension" span="Tool" subtitle='Getting started with the educational tool.'/>
                 <section className="relative bg-white">
                     <div className="absolute h-1/2 w-full bg-stone-50" aria-hidden="true"/>
                     <Decoration/>

@@ -44,11 +44,11 @@ const MobileMenu = ({open, setOpen}) => {
                         <div className="space-y-2 py-6">
                             {renderNavigationItems("-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-[#d7f2ef]")}
                         </div>
-                        <div className="py-6">
+{/*                        <div className="py-6">
                             <Link to="/login" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-[#d7f2ef]">
                                 Log in
                             </Link>
-                        </div>
+                        </div>*/}
                     </div>
                 </div>
             </Dialog.Panel>
@@ -65,13 +65,13 @@ const LinkSection = ({className}) => {
     );
 };
 
-const LogLink = ({className}) => {
+/*const LogLink = ({className}) => {
     return (
         <Link to="/login" className={className}>
             Log in <span aria-hidden="true">&rarr;</span>
         </Link>
     );
-};
+};*/
 
 const MenuButton = ({setOpen}) => {
     return (
@@ -105,7 +105,7 @@ export const Header = () => {
                     {renderNavigationItems("text-base font-semibold leading-6 text-gray-900 border-b-3 border-transparent hover:border-[#80BFAD]")}
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <LogLink className="text-sm font-semibold leading-6 text-gray-900"/>
+                 {/*   <LogLink className="text-sm font-semibold leading-6 text-gray-900"/>*/}
                 </div>
             </nav>
             <MobileMenu open={mobileMenuOpen} setOpen={setMobileMenuOpen}/>

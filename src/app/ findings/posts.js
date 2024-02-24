@@ -42,7 +42,7 @@ export const posts = [
     },
     {
         id: 6,
-        title: 'Fibrosis',
+        title: 'Lung fibrosis',
         href: '#',
         description: 'Lung fibrosis can be qualitatively graded into three levels: 0-10%, 11-30%, and > 30%. Usual interstitial pneumonia (UIP) and nonspecific interstitial pneumonia (NSIP) are the main CT patterns of lung fibrosis.',
         imageUrl: '/fibrosis.png',
@@ -98,7 +98,7 @@ export const posts = [
     },
     {
         id: 13,
-        title: 'Cteph',
+        title: 'Chronic thromboembolic pulmonary disease',
         href: '#',
         description: 'Main CTEPH findings include: vascular obstruction; lung hyperemia; collateral systemic supply and peripheral scars.',
         imageUrl: '/ctph.png',

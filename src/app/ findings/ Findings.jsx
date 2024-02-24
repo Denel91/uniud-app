@@ -1,12 +1,12 @@
 import React from "react";
 import {Layout} from "../../components/Layout.jsx";
 import {posts} from "./posts.js"
+import {Image} from "@nextui-org/react";
 
 const Header = () => {
     return (
         <>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Chest <span
-                className="text-indigo-600">imaging</span></h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Chest <span className="text-indigo-600">imaging</span></h2>
         </>
     );
 };
@@ -14,8 +14,7 @@ const Header = () => {
 const ImageCard = ({post}) => {
     return (
         <div className="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-80 lg:shrink-0">
-            <img src={post.imageUrl} alt="chest imaging" className="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover"/>
-            <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10 border-2 shadow-2xl"/>
+            <Image src={post.imageUrl} alt="chest imaging" shadow="md" className="object-contain"></Image>
         </div>
     );
 };
@@ -40,7 +39,7 @@ const TitleDescription = ({post}) => {
                     {post.title}
                 </a>
             </h3>
-            <p className="mt-5 text-medium leading-6 text-gray-700">{post.description}</p>
+            <p className="mt-5 text-medium leading-6 text-gray-900">{post.description}</p>
         </div>
     );
 };

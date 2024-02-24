@@ -24,16 +24,11 @@ const IMAGE_CLASS_NAME_4 = "aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gra
 const Description = () => {
     return (
         <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Work</h2>
-            <p className="mt-6 text-xl leading-8 text-gray-600">
-                The diagnostic tools play a critical role in the field of medicine and healthcare.
-                They provide a way for healthcare professionals to identify and diagnose a wide range of medical
-                conditions and diseases.
-                This process is vital in ensuring effective treatment plans can be created and implemented for the
-                patient.
-            </p>
-            <p className="mt-6 text-xl leading-7 text-gray-600">
-                A diagnostic tool can help in early detection of diseases, resulting in timely intervention.
+            <h2 className="text-4xl lg:text-4xl font-bold tracking-tight text-indigo-600 sm:text-4xl">Our Work</h2>
+            <p className="mt-6 text-xl leading-8 text-gray-900">
+                Contrast-enhanced chest computed tomography (CT) imaging can offer valuable insights for patients with suspected or confirmed PH.
+                Indeed, CT aids in identifying the cause of PH due to a comprehensive evaluation of all the chest compartments, including the lung, heart, pulmonary vessels, and other mediastinal structures, e.g., esophageal ectasia, lymph node enlargement, and signs of portal hypertension.
+                On these bases, we developed a machine learning-driven educational tool for categorizing PH via contrast-enhanced chest CT.
             </p>
         </div>
     );

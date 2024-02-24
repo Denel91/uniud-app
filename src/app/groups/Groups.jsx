@@ -10,9 +10,9 @@ const CLASS_NAME_DOWN = "mx-auto mt-8 grid max-w-2xl auto-rows-fr grid-cols-1 ga
 const Header = () => {
     return (
         <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Pulmonary <span
-                className="text-indigo-600">Hypertension</span> classification</h2>
-            <p className="mt-2 text-lg leading-8 text-gray-600">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                <span className="text-indigo-600">Pulmonary Hypertension</span> classification</h2>
+            <p className="mt-2 text-lg leading-8 text-gray-900">
                 Pulmonary hypertension classification encompasses five groups.
             </p>
         </div>

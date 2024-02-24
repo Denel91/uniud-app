@@ -18,8 +18,7 @@ const Polygon = () => (
             </pattern>
         </defs>
         <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
-            <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
-                  strokeWidth={0}/>
+            <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" strokeWidth={0}/>
         </svg>
         <rect width="100%" height="100%" strokeWidth={0} fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)"/>
     </svg>
@@ -51,8 +50,8 @@ const Scenario = () => (
                     Definition and clinical scenario
                 </h2>
                 <p className="mt-3 text-xl text-white">
-                    Pulmonary Hypertension is defined by a mean pulmonary arterial pressure (mPAP) &gt; 20 mmHg at rest,
-                    as determined by means of right heart catheterization.
+                    Pulmonary Hypertension is characterized by a mean pulmonary arterial pressure (mPAP) that exceeds 20 mmHg at rest.
+                    This measurement is established through the process of right heart catheterization.
                 </p>
                 <Link to="/about"
                       className="mt-8 block w-full rounded-md border border-transparent bg-[#99cccc] px-8 py-3 text-base font-medium text-gray-900 hover:bg-[#77bbbb] sm:w-auto">
@@ -93,7 +92,7 @@ const Header = () => {
                 <hr/>
                 An educational tool.
             </Headline>
-            <Paragraph className="mt-6 text-lg text-gray-600">
+            <Paragraph className="mt-6 text-lg text-gray-900">
                 Istituto di Radiologia, Dipartimento di Medicina (DMED), Università degli Studi di Udine.
             </Paragraph>
             <LinkSection/>
@@ -103,8 +102,7 @@ const Header = () => {
 
 const ImageBox = () => {
     return (
-        <div
-            className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
+        <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
             <ImageSection/>
         </div>
     );

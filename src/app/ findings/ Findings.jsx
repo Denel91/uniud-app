@@ -1,7 +1,6 @@
 import React from "react";
 import {Layout} from "../../components/Layout.jsx";
 import {posts} from "./posts.js"
-import {Image} from "@nextui-org/react";
 
 const Header = () => {
     return (
@@ -13,8 +12,8 @@ const Header = () => {
 
 const ImageCard = ({post}) => {
     return (
-        <div className="relative aspect-square sm:aspect-square lg:aspect-square lg:w-80 lg:shrink-0">
-            <Image src={post.imageUrl} alt="chest imaging" shadow="md" lassName="absolute inset-0 h-full w-full rounded-2xl object-contain border-3 border-green-600"/>
+        <div className="relative aspect-square sm:aspect-square lg:aspect-square lg:w-80 lg:shrink-0 border-3 border-red-700">
+            <img src={post.imageUrl} alt="chest imaging" className="absolute inset-0 h-full w-full rounded-2xl object-contain border-3 border-green-600"/>
         </div>
     );
 };

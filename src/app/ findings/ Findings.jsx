@@ -12,7 +12,7 @@ const Header = () => {
 
 const ImageCard = ({post}) => {
     return (
-        <div className="relative aspect-square sm:aspect-square lg:aspect-square lg:w-80 lg:shrink-0 border-3 border-red-700">
+        <div className="relative aspect-square sm:aspect-square lg:aspect-square lg:w-80 lg:shrink-0">
             <img src={post.imageUrl} alt="chest imaging" className="absolute inset-0 h-full w-full rounded-2xl object-contain"/>
         </div>
     );

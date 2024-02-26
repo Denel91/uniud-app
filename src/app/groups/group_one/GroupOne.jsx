@@ -24,8 +24,7 @@ const SVGPattern = () => (
                 width={20}
                 height={20}
                 patternUnits="userSpaceOnUse">
-                <rect x={0} y={0} width={4} height={4} className="text-gray-200"
-                      fill="currentColor"/>
+                <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor"/>
             </pattern>
         </defs>
         <rect width={404} height={384} fill="url(#de316486-4a29-4312-bdfc-fbce2132a2c1)"/>
@@ -68,13 +67,13 @@ export const GroupOne = () => {
                 <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-8">
                     <div className="absolute bottom-0 left-3/4 top-0 hidden w-screen bg-gray-50 lg:block"/>
                     <div className="mx-auto mt-12 max-w-prose text-base lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8 lg:mt-20">
-                        <Header title="Group I" subtitle="Pulmonary Arterial Hypertension"/>
+                        <Header title="Group I" subtitle="Pulmonary arterial hypertension"/>
                     </div>
                     <div className="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
                         <div className="relative lg:col-start-2 lg:row-start-1">
                             <SVGPattern/>
                             <div className="relative mx-auto max-w-prose text-base lg:max-w-none lg:mt-8">
-                                <GroupImage src="https://plus.unsplash.com/premium_photo-1681996535883-97ceb10815d8?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+                                <GroupImage src="https://images.unsplash.com/photo-1578496479531-32e296d5c6e1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
                             </div>
                         </div>
                         <div className="mt-8 lg:mt-8">

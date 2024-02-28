@@ -18,7 +18,7 @@ const API_URL = 'https://mitel.dimi.uniud.it/ph/api.php';
  *
  * @returns {JSX.Element} The rendered title section component.
  */
-const TitleSection = ({title, span, subtitle}) => {
+export const TitleSection = ({title, span, subtitle}) => {
     return (
         <div className="bg-stone-50">
             <div className="py-24 lg:py-32">
@@ -74,7 +74,7 @@ const Decoration = () => {
  * @param {Array} props.paramsData - The array of parameter data.
  * @returns {JSX.Element} The rendered fieldset component.
  */
-const Controls = ({paramsData}) => {
+export const Controls = ({paramsData}) => {
     const [selectedItems, setSelectedItems] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalData, setModalData] = useState(null);

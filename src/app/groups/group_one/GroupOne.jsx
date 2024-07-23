@@ -31,7 +31,7 @@ const SVGPattern = () => (
     </svg>
 );
 
-const GroupImage = ({src}) => (
+/*const GroupImage = ({src}) => (
     <figure>
         <div className="aspect-h-7 aspect-w-12 lg:aspect-none">
             <img
@@ -43,7 +43,7 @@ const GroupImage = ({src}) => (
             />
         </div>
     </figure>
-);
+);*/
 
 const Content = () => (
     <div className="mx-auto max-w-prose text-base lg:max-w-none">
@@ -72,9 +72,9 @@ export const GroupOne = () => {
                     <div className="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
                         <div className="relative lg:col-start-2 lg:row-start-1">
                             <SVGPattern/>
-                            <div className="relative mx-auto max-w-prose text-base lg:max-w-none lg:mt-8">
+{/*                            <div className="relative mx-auto max-w-prose text-base lg:max-w-none lg:mt-8">
                                 <GroupImage src="https://images.unsplash.com/photo-1578496479531-32e296d5c6e1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
-                            </div>
+                            </div>*/}
                         </div>
                         <div className="mt-8 lg:mt-8">
                             <Content/>

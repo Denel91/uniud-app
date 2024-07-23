@@ -30,10 +30,10 @@ const Headline = ({className, children}) => (
     </h1>
 );
 
-const Paragraph = ({className, children}) => (
-    <p className={`${className}`}>
+const LinkSec = ({ className, children, href }) => (
+    <a className={`${className}`} href={href}>
         {children}
-    </p>
+    </a>
 );
 
 const Scenario = () => (
@@ -87,14 +87,14 @@ const ImageSection = () => {
 const Header = () => {
     return (
         <div className="mx-auto max-w-3xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
-            <Headline className="lg:-mt-12 mt-2 lg:leading-tight text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            <Headline className="lg:-mt-12 mt-2 lg:leading-tight text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:mb-6 mb-6">
                 Imaging insights into <span className="text-indigo-600">Pulmonary Hypertension</span>:
                 <hr/>
                 An educational tool.
             </Headline>
-            <Paragraph className="mt-6 text-lg text-gray-900">
+            <LinkSec className="pt-6 text-md text-gray-900 hover:text-cyan-600" href="https://asufc.sanita.fvg.it/it/strutture/ASUIUD/asuiud-santamaria/ud-dip-diagnostica-immagini/ud-istituto-radiologia-diagnostica/">
                 Istituto di Radiologia, Dipartimento di Medicina (DMED), Università degli Studi di Udine.
-            </Paragraph>
+            </LinkSec>
             <LinkSection/>
         </div>
     );
